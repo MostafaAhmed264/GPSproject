@@ -1,5 +1,6 @@
 
 #include "tm4c123gh6pm.h"
+extern void lightLed();
 void delay(){
 for (x = 1; x <= 100; x++)
 for (d = 1; d <= 100;d++)
@@ -95,6 +96,9 @@ void displayNum3(int number)
         turnON_Digit(1);
         displayNum(numberArray[2]);
         delay();
+
         lightLed();
+       
+
     }
 }
