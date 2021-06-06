@@ -1,6 +1,23 @@
 
 #include "tm4c123gh6pm.h"
-
+void turnON_Digit(int number) 
+{ // Turns on a single digit 
+  switch (number) 
+  {
+    // first digit
+    case 1:
+      GPIO_PORTD_DATA_R=0x06;
+      break;
+    // second digit 
+    case 2:
+      GPIO_PORTD_DATA_R=0x05;
+      break;
+    // third digit 
+    case 3:
+      GPIO_PORTD_DATA_R=0x03;
+      break;
+  }
+}
 void displayNum(int number) 
 { // displays a number 0-9
   switch (number) 
