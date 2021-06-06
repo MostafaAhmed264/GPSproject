@@ -35,7 +35,7 @@ void displayNum(int number)
       GPIO_PORTB_DATA_R=0x06; //b and c on
       break;
     case 2:
-      GPIO_PORTB_DATA_R=0x5B; // a b g e d
+      GPIO_PORTB_DATA_R=0x6B; // a b g e d
       break;  
 		
    case 3:
@@ -45,13 +45,13 @@ void displayNum(int number)
       GPIO_PORTB_DATA_R=0x66; // b c f g
       break;
   case 5:
-      GPIO_PORTB_DATA_R=0x5D; //a f g c d
+      GPIO_PORTB_DATA_R=0x6D; //a f g c d
       break;  
   case 6:
       GPIO_PORTB_DATA_R=0x7D; // all except b
       break;   
   case 7:
-      GPIO_PORTB_DATA_R=0x70; // a b c
+      GPIO_PORTB_DATA_R=0x07; // a b c
       break;
   case 8:
       GPIO_PORTB_DATA_R=0x7F; // all
