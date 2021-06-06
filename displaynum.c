@@ -1,5 +1,11 @@
 
 #include "tm4c123gh6pm.h"
+void delay(){
+for (x = 1; x <= 100; x++)
+for (d = 1; d <= 100;d++)
+{}
+}
+
 void turnON_Digit(int number) 
 { // Turns on a single digit 
   switch (number) 
