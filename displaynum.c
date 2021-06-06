@@ -61,3 +61,40 @@ void displayNum(int number)
       break;
   }
 }
+
+
+
+void displayNum3(int number)
+{
+    /* count number of digits */
+    int c = 0; /* digit position */
+    int n = number;
+    int numberArray[3] = { 0,0,0 };
+    int x, d;
+    /* extract each digit */
+    while (n != 0)// if we n= 100  numberArray[]={0,0,1}
+    {
+        numberArray[c] = n % 10;
+        n /= 10;
+        c++;
+    }
+
+    while (1)//if you need to make the bonus change true 
+
+    {
+
+        //turning on digit one and putting right most digit in it
+        turnON_Digit(3);
+        displayNum(numberArray[0]);
+        delay();
+        //turning digit two and putting the middle digit in it
+        turnON_Digit(2);
+        displayNum(numberArray[1]);
+        delay();
+        //turning digit three and putting the left digit in it
+        turnON_Digit(1);
+        displayNum(numberArray[2]);
+        delay();
+        lightLed();
+    }
+}
