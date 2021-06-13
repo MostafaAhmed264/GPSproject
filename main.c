@@ -98,6 +98,19 @@ LCD_init();
 	
 		}
 		
-			
+			while(1){
+			floatToString(N,total_Distance);
+			GPIO_PORTF_DATA_R= 0x04;
+			LCD_Cmd(FirstRow); // Force cusor to begining of first row
+			LCD_String(N,10);
+		
+		
+			}	
+		
+		
+		
 	
+}
+void SystemInit(){
+	SCB->CPACR|=((3UL<<10*2)|(3UL<<11*2));
 }
