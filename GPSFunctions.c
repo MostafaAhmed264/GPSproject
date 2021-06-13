@@ -220,3 +220,47 @@ int i;
 
     return intDest;
     }
+
+float getLatitude(int* x){
+	
+	int degrees;
+	float minutes;
+	float latitude;
+	//SCB->CPACR|=((3UL<<10*2)|(3UL<<11*2));
+	degrees = x[0]*10 + x[1];
+	//minutes =(x[2] * 10) + (x[3]) + (x[4] * 0.1) + (x[5] * 0.01) + (x[6] * 0.001) + (x[7] * 0.0001) + (x[8] * 0.00001);
+	//latitude = degrees + (minutes* 0.0166667);
+
+	 
+	minutes = (x[2] * 10);
+	minutes += x[3];
+minutes += x[4] * 0.1;
+	minutes += (x[5] * 0.01);
+	minutes += (x[6] * 0.001);
+minutes += (x[7] * 0.0001);
+minutes += x[8] * 0.00001;
+	latitude = degrees +  minutes/60.00;
+	return latitude;
+}
+		
+		
+float getLongitude(int* x){
+
+	int degrees;
+	float minutes;
+	float longitude;
+	//	SCB->CPACR|=((3UL<<10*2)|(3UL<<11*2));
+	degrees = x[0]*100 + x[1]*10+x[2];
+	//minutes =x[3]*10 + x[4] + (x[5] / 10.0) + (x[6] / 100.0) + (x[7] / 1000.0) + (x[8] / 10000.0) + (x[9]/100000.0);
+	minutes = (x[2] * 10);
+	minutes += x[3];
+	minutes += x[4] * 0.1;
+	minutes += (x[5] * 0.01);
+	minutes += (x[6] * 0.001);
+	minutes += (x[7] * 0.0001);
+	minutes += x[8] * 0.00001;
+	//minutes+=(x[9]/100000.0);
+	longitude = degrees +  minutes/60.00;
+	return longitude;
+}
+
