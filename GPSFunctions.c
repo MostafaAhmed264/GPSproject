@@ -67,3 +67,35 @@ char* getDest() {
     GPIO_PORTF_DATA_R = 0x04;
     return dest;
 }
+char* sortDestN()
+{
+    static char sortedDestN[10];
+    int j = 0;
+    char* d = dest;
+    int i;
+    for (i = 9; i >= 0; --i)
+    {
+
+        sortedDestN[j] = d[i];
+        j++;
+    }
+
+    return sortedDestN;
+}
+
+char* sortDestE()
+{
+    static char sortedDestE[11];
+    int j = 0;
+    char* d = dest;
+    int i;
+    GPIO_PORTF_DATA_R = 0x02;
+    for (i = 20; i >= 10; --i)
+    {
+
+        sortedDestE[j] = d[i];
+        j++;
+    }
+
+    return sortedDestE;
+}
