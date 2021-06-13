@@ -16,10 +16,20 @@ void LCD_Cmd(unsigned char cmnd);
 /* Milli seconds delay function */
 void delay_ms(int n)  
 {
- int i,j;
- for(i=0;i<n;i++)
- for(j=0;j<3180;j++)
- {}
+    int i, j;
+    for (i = 0; i < n; i++)
+        for (j = 0; j < 3180; j++)
+        {
+            GPIO_PORTF_DATA_R |= 0x0E;
+            if ((GPIO_PORTF_DATA_R & 0x01) == 0x00)
+            {
+
+                i = n;
+                j = 3180;
+            }
+
+
+        }
 }
 /* Micro seconds delay function */
 void delay_us(int n) 
