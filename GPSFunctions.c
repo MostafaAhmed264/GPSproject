@@ -7,10 +7,10 @@ char readChar() {
     return ((char)UART7_DR_R & 0xFF);
 }
 
+    char dest[21];
 
-char* getDest() {
+void getDest() {
 
-    static char dest[21];
     char arr[70];
     int i = 0;
     int k = 0;
@@ -24,7 +24,7 @@ char* getDest() {
             arr3[f] = readChar();
         }
         if (strcmp(arr3, "$GPRMC") == 0 || strcmp(arr3, "$GPGGA") == 0) {
-            GPIO_PORTF_DATA_R = 0x08;
+        
             y = 0;
         }
 
@@ -64,8 +64,7 @@ char* getDest() {
 
         i++;
     }
-    GPIO_PORTF_DATA_R = 0x04;
-    return dest;
+  
 }
 char* sortDestN()
 {
