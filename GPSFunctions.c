@@ -99,3 +99,65 @@ char* sortDestE()
 
     return sortedDestE;
 }
+int* charToIntN(char *c)
+    {
+
+        char *d = c;
+        static int intNDest[9];
+        int j=0;
+            int i;
+
+        for ( i = 0; i < 9; ++i)
+        {
+
+
+            switch (d[i])
+            {
+
+            case '0':
+                intNDest[j] = 0;
+                j++;
+                break;
+            case '1':
+                intNDest[j] = 1;
+                j++;
+                break;
+            case '2':
+                intNDest[j] = 2;
+                j++;
+                break;
+            case '3':
+                intNDest[j] = 3;
+                j++;
+                break;
+            case '4':
+                intNDest[j] = 4;
+                j++;
+                break;
+            case '5':
+                intNDest[j] = 5;
+                j++;
+                break;
+            case '6':
+                intNDest[j] = 6;
+                j++;
+                break;
+            case '7':
+                intNDest[j] = 7;
+                j++;
+                break;
+            case '8':
+                intNDest[j] = 8;
+                j++;
+                break;
+            case '9':
+                intNDest[j] = 9;
+                j++;
+                break;
+            default:
+                continue;
+            }
+        }
+
+        return     intNDest;
+    }
