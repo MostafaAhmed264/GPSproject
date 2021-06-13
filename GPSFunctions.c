@@ -161,3 +161,62 @@ int* charToIntN(char *c)
 
         return     intNDest;
     }
+int *charToIntE(char *c) {
+    char *d = c;
+    static int intDest[10];
+    int j = 0;
+int i;
+
+        for (i = 0; i < 10; ++i)
+    {
+
+        switch (d[i])
+        {
+
+        case '0':
+            intDest[j] = 0;
+            j++;
+            break;
+        case '1':
+            intDest[j] = 1;
+            j++;
+            break;
+        case '2':
+            intDest[j] = 2;
+            j++;
+            break;
+        case '3':
+            intDest[j] = 3;
+            j++;
+            break;
+        case '4':
+            intDest[j] = 4;
+            j++;
+            break;
+        case '5':
+            intDest[j] = 5;
+            j++;
+            break;
+        case '6':
+            intDest[j] = 6;
+            j++;
+            break;
+        case '7':
+            intDest[j] = 7;
+            j++;
+            break;
+        case '8':
+            intDest[j] = 8;
+            j++;
+            break;
+        case '9':
+            intDest[j] = 9;
+            j++;
+            break;
+        default:
+            continue;
+        }
+    }
+
+    return intDest;
+    }
